@@ -4,6 +4,7 @@
 
 import requests
 
+
 def courses():
     a = '12345689'
     return a
