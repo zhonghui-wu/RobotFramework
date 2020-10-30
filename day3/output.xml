@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.8.3 on darwin)" generated="20201029 18:18:07.821" rpa="false">
-<suite id="s1" name="条件表达式" source="/Users/wuzhonghui/PycharmProjects/RobotFramework/day3/条件表达式.robot">
+<robot generator="Robot 3.2.2 (Python 3.8.3 on darwin)" generated="20201030 18:37:53.510" rpa="false">
+<suite id="s1" name="Work" source="/Users/wuzhonghui/PycharmProjects/RobotFramework/day3/work.robot">
+<kw name="Delete Course" library="lib" type="setup">
+<msg timestamp="20201030 18:37:53.685" level="INFO">本次共删除了 0 条数据</msg>
+<status status="PASS" starttime="20201030 18:37:53.675" endtime="20201030 18:37:53.685"></status>
+</kw>
 <test id="s1-t1" name="case1">
-<kw name="Drivers" library="test2">
-<assign>
-<var>${d}</var>
-</assign>
-<msg timestamp="20201029 18:18:11.197" level="INFO">${d} = &lt;selenium.webdriver.chrome.webdriver.WebDriver (session="a09fe8de50bc24f16ab15159b8d3ca83")&gt;</msg>
-<status status="PASS" starttime="20201029 18:18:07.993" endtime="20201029 18:18:11.198"></status>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<doc>Evaluates the given expression in Python and returns the result.</doc>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
 <arguments>
-<arg>$d.get('http://www.baidu.com')</arg>
+<arg>111</arg>
 </arguments>
-<status status="PASS" starttime="20201029 18:18:11.198" endtime="20201029 18:18:12.211"></status>
+<status status="PASS" starttime="20201030 18:37:53.686" endtime="20201030 18:37:53.686"></status>
 </kw>
-<status status="PASS" starttime="20201029 18:18:07.993" endtime="20201029 18:18:12.211" critical="yes"></status>
+<status status="PASS" starttime="20201030 18:37:53.685" endtime="20201030 18:37:53.686" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20201029 18:18:07.823" endtime="20201029 18:18:12.215"></status>
+<kw name="Delete Course" library="lib" type="teardown">
+<msg timestamp="20201030 18:37:53.696" level="INFO">本次共删除了 0 条数据</msg>
+<status status="PASS" starttime="20201030 18:37:53.687" endtime="20201030 18:37:53.698"></status>
+</kw>
+<status status="PASS" starttime="20201030 18:37:53.512" endtime="20201030 18:37:53.699"></status>
 </suite>
 <statistics>
 <total>
@@ -28,7 +29,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="条件表达式">条件表达式</stat>
+<stat pass="1" fail="0" id="s1" name="Work">Work</stat>
 </suite>
 </statistics>
 <errors>
