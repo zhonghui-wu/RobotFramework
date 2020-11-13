@@ -2,7 +2,7 @@
 Library  lib
 Library  Dialogs   #  RF库，用于用户交互，如此输入框
 Suite Setup  deleteCourse
-Suite Teardown  deleteCourse
+Suite Teardown
 
 *** Test Cases ***
 case1

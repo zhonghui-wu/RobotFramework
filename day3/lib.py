@@ -92,6 +92,6 @@ if __name__ == '__main__':
     # deleteCourse()
     # add(1,1,1)
     # a = lists(1,1)
-    # print(type(a[0]['name']))
+    # print(a)
 
 

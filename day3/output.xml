@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.8.3 on darwin)" generated="20201103 15:48:03.538" rpa="false">
-<suite id="s1" name="Work2" source="/Users/wuzhonghui/PycharmProjects/RobotFramework/day3/work2.robot">
-<test id="s1-t1" name="case1">
-<kw name="Delete All Course" library="lib" type="setup">
-<msg timestamp="20201103 15:48:14.049" level="INFO">课程全部删除成功</msg>
-<status status="PASS" starttime="20201103 15:48:03.886" endtime="20201103 15:48:14.049"></status>
+<robot generator="Robot 3.2.2 (Python 3.8.3 on darwin)" generated="20201109 18:27:44.756" rpa="false">
+<suite id="s1" name="Work" source="/Users/wuzhonghui/PycharmProjects/RobotFramework/day3/work.robot">
+<kw name="Delete Course" library="lib" type="setup">
+<msg timestamp="20201109 18:27:44.957" level="INFO">本次共删除了 1 条数据</msg>
+<status status="PASS" starttime="20201109 18:27:44.929" endtime="20201109 18:27:44.958"></status>
 </kw>
+<test id="s1-t1" name="case1">
 <kw name="Lists" library="lib">
 <arguments>
 <arg>1</arg>
@@ -14,142 +14,73 @@
 <assign>
 <var>${listCourse}</var>
 </assign>
-<msg timestamp="20201103 15:48:14.060" level="INFO">${listCourse} = []</msg>
-<status status="PASS" starttime="20201103 15:48:14.050" endtime="20201103 15:48:14.060"></status>
+<msg timestamp="20201109 18:27:44.968" level="INFO">${listCourse} = []</msg>
+<status status="PASS" starttime="20201109 18:27:44.958" endtime="20201109 18:27:44.968"></status>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <doc>Returns a list containing given items.</doc>
 <assign>
-<var>${lists}</var>
+<var>${dict}</var>
 </assign>
-<msg timestamp="20201103 15:48:14.060" level="INFO">${lists} = []</msg>
-<status status="PASS" starttime="20201103 15:48:14.060" endtime="20201103 15:48:14.060"></status>
+<msg timestamp="20201109 18:27:44.969" level="INFO">${dict} = []</msg>
+<status status="PASS" starttime="20201109 18:27:44.968" endtime="20201109 18:27:44.969"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>${lists}==${listCourse}</arg>
+<arg>${dict}==${listCourse}</arg>
 <arg>log to console</arg>
-<arg>课程初始化成功</arg>
+<arg>系统中没有课程，初始化成功</arg>
 <arg>ELSE</arg>
 <arg>log to console</arg>
-<arg>初始化失败，请查看 deleteAllCourse 函数代码</arg>
+<arg>初始化失败，请检查代码</arg>
 </arguments>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
-<arg>课程初始化成功</arg>
+<arg>系统中没有课程，初始化成功</arg>
 </arguments>
-<status status="PASS" starttime="20201103 15:48:14.061" endtime="20201103 15:48:14.062"></status>
+<status status="PASS" starttime="20201109 18:27:44.970" endtime="20201109 18:27:44.970"></status>
 </kw>
-<status status="PASS" starttime="20201103 15:48:14.061" endtime="20201103 15:48:14.062"></status>
+<status status="PASS" starttime="20201109 18:27:44.969" endtime="20201109 18:27:44.970"></status>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
+<kw name="Get Value From User" library="Dialogs">
+<doc>Pauses test execution and asks user to input a value.</doc>
 <arguments>
-<arg>初始化成功</arg>
+<arg>请输入课程名，输入 q 则退出程序</arg>
 </arguments>
-<status status="PASS" starttime="20201103 15:48:14.062" endtime="20201103 15:48:14.062"></status>
+<assign>
+<var>${course}</var>
+</assign>
+<msg timestamp="20201109 18:27:51.145" level="INFO">${course} = q</msg>
+<status status="PASS" starttime="20201109 18:27:44.971" endtime="20201109 18:27:51.145"></status>
 </kw>
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>http://127.0.0.1/mgr/login/login.html</arg>
-<arg>chrome</arg>
+<arg>'q'==$course</arg>
+<arg>exit for loop</arg>
 </arguments>
-<msg timestamp="20201103 15:48:14.063" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1/mgr/login/login.html'.</msg>
-<status status="PASS" starttime="20201103 15:48:14.063" endtime="20201103 15:48:17.123"></status>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20201109 18:27:51.154" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20201109 18:27:51.154" endtime="20201109 18:27:51.155"></status>
 </kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<arguments>
-<arg>10</arg>
-</arguments>
-<status status="PASS" starttime="20201103 15:48:17.124" endtime="20201103 15:48:17.127"></status>
+<status status="PASS" starttime="20201109 18:27:51.146" endtime="20201109 18:27:51.155"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>css=.btn-success</arg>
-</arguments>
-<msg timestamp="20201103 15:48:17.128" level="INFO">Clicking element 'css=.btn-success'.</msg>
-<status status="PASS" starttime="20201103 15:48:17.128" endtime="20201103 15:48:17.205"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>css=.btn-md</arg>
-</arguments>
-<msg timestamp="20201103 15:48:17.206" level="INFO">Clicking element 'css=.btn-md'.</msg>
-<status status="PASS" starttime="20201103 15:48:17.205" endtime="20201103 15:48:17.633"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>css=[ng-model="addData.name"]</arg>
-<arg>语文</arg>
-</arguments>
-<msg timestamp="20201103 15:48:17.634" level="INFO">Typing text '语文' into text field 'css=[ng-model="addData.name"]'.</msg>
-<status status="PASS" starttime="20201103 15:48:17.633" endtime="20201103 15:48:17.804"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>css=[ng-model="addData.desc"]</arg>
-<arg>初中语文</arg>
-</arguments>
-<msg timestamp="20201103 15:48:17.805" level="INFO">Typing text '初中语文' into text field 'css=[ng-model="addData.desc"]'.</msg>
-<status status="PASS" starttime="20201103 15:48:17.804" endtime="20201103 15:48:17.893"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>css=[ng-model="addData.display_idx"]</arg>
-<arg>1</arg>
-</arguments>
-<msg timestamp="20201103 15:48:17.894" level="INFO">Typing text '1' into text field 'css=[ng-model="addData.display_idx"]'.</msg>
-<status status="PASS" starttime="20201103 15:48:17.894" endtime="20201103 15:48:18.017"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>css=[ng-click="addOne()"]</arg>
-</arguments>
-<msg timestamp="20201103 15:48:18.018" level="INFO">Clicking element 'css=[ng-click="addOne()"]'.</msg>
-<status status="PASS" starttime="20201103 15:48:18.018" endtime="20201103 15:48:18.078"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3</arg>
-</arguments>
-<msg timestamp="20201103 15:48:21.081" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20201103 15:48:18.079" endtime="20201103 15:48:21.081"></status>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>增加课程测试通过</arg>
-</arguments>
-<status status="PASS" starttime="20201103 15:48:21.081" endtime="20201103 15:48:21.082"></status>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20201103 15:48:21.082" endtime="20201103 15:48:21.191"></status>
-</kw>
-<status status="PASS" starttime="20201103 15:48:03.885" endtime="20201103 15:48:21.192" critical="yes"></status>
+<status status="FAIL" starttime="20201109 18:27:44.958" endtime="20201109 18:27:51.155" critical="yes">Invalid 'Exit For Loop' usage.</status>
 </test>
-<status status="PASS" starttime="20201103 15:48:03.540" endtime="20201103 15:48:21.194"></status>
+<status status="FAIL" starttime="20201109 18:27:44.758" endtime="20201109 18:27:51.156"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="Work2">Work2</stat>
+<stat pass="0" fail="1" id="s1" name="Work">Work</stat>
 </suite>
 </statistics>
 <errors>

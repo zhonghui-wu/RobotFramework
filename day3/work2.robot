@@ -18,7 +18,8 @@ case1
     input text  css=[ng-model="addData.desc"]  初中语文
     input text  css=[ng-model="addData.display_idx"]   1
     click element  css=[ng-click="addOne()"]
-    sleep  3
+    ${msg}  get webelements  css=[total-items="totalNum"]
+    should be true  $lists!=$msg
     log to console  增加课程测试通过
     close browser
 
